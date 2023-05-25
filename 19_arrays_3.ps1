@@ -2,6 +2,8 @@
 # - Arrays are fixed size in memory and there is no operation to allocated
 #   or de-allocate memory to change an existing array's size; basically, if
 #   you need a bigger/smaller array, you need to create a new array.
+#   It's important to understand that this is happening in the background as
+#   it can have large implications on application speed.
 #
 #   The += and + operators can be used to "add" elements to an array, but the
 #   arrays involved are actually being copied into a new array of the 

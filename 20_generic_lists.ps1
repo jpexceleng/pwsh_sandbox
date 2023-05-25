@@ -9,16 +9,26 @@ using namespace System.Collections.Generic
 # $arr = [System.Collections.Generic.List[int]]::new()
 $arr = [List[int]]::new()
 
-
-# ArrayList is .NET object also available, but is deprecated; use Generic List.
-# ArrayList declaration
-# $arr = [System.Collections.ArrayList]::new()
-
 # add elements to ArrayList
 for ($i = 0; $i -lt 4; $i++)
 {
     # $arr += $i
-    [void]$arr.Add($i) # use [void] to suppress unexpected output
+    $arr.Add($i) # use [void] to suppress unexpected output
 }
 
 Write-Host $arr
+
+
+# ArrayList is .NET object also available, but is deprecated; using Generic
+# Lists is prefferred.
+# ArrayList declaration
+# $arr = [System.Collections.ArrayList]::new()
+
+# add elements to ArrayList
+# for ($i = 0; $i -lt 4; $i++)
+# {
+#     # $arr += $i
+#     # [void]$arr.Add($i) # use [void] to suppress unexpected output
+# }
+
+# Write-Host $arr
