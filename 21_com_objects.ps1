@@ -14,47 +14,52 @@ $excel = New-Object -ComObject Excel.application
 # $excel.visible = $true
 
 # create a new workbook
-$wb = $excel.workbooks.add()
+# $wb = $excel.workbooks.add()
 
 # load an existing workbook
-# $filepath = "repos/pwsh_sandbox/res/workbook.xlsx"
-# $wb = $excel.workbooks.open($filepath) 
-
-# update workbook properties
-$wb.author = "JP- jpeterson@exceleng.net"
-$wb.title = "some title"
-$wb.subject = "some subject"
-
-# delete excess worksheets
+$filepath = "repos/pwsh_sandbox/res/workbook.xlsx"
 try {
-    for($i = $wb.sheets.count; $i -gt 1; $i--) {
-        $wb.sheets.item($num).delete()
-    }
+    $wb = $excel.workbooks.open($filepath) 
 }
 catch {
     Write-Host "Something went wrong: $_.exception.message"
 }
 
+# update workbook properties
+# $wb.author = "JP- jpeterson@exceleng.net"
+# $wb.title = "some title"
+# $wb.subject = "some subject"
+
+# delete excess worksheets
+# try {
+#     for($i = $wb.sheets.count; $i -gt 1; $i--) {
+#         $wb.sheets.item($num).delete()
+#     }
+# }
+# catch {
+#     Write-Host "Something went wrong: $_.exception.message"
+# }
+
 # rename remaining worksheet to "data"
-$ws = $wb.sheets | Where-Object {$_.name -eq "Sheet1"}
-$ws.name = "data"
+$ws = $wb.sheets.item(1)
+# $ws.name = "data"
 
 # add some data to a specific row and column
-$ws.range("A1:A10").cells = "90"
-$ws.cells.item(11, 1).value = "60"
-$ws.cells.item(12, 1).formula = "=SUM(A1:A11)"
+# $ws.range("A1:A10").cells = "90"
+# $ws.cells.item(11, 1).value = "60"
 
 # get last row and column in worksheet
 $lr = $ws.usedrange.rows.count
 $lc = $ws.usedrange.columns.count
+$lr++ # increment to next empty row
 $ws.cells.item($lr, $lc).value = "next empty cell"
 
 # download data from internet and store in excel workbook
 # TODO
 
 # save the workbook to a specific file location
-$wb.saveas("repos/pwsh_sandbox/res/workbook.xlsx")
-# $wb.save() # save existing workbook
+# $wb.saveas("repos/pwsh_sandbox/res/workbook.xlsx")
+$wb.save() # save existing workbook
 
 # terminate application instance
 $excel.quit()
