@@ -9,8 +9,8 @@
 #   
 #   There are no operations to "decrease" the size of an existing array.
 
-$arr1 = @(34, 67, 187, 20002, 568)
-$arr2 = @("tree", "house", "rope")
+# $arr1 = @(34, 67, 187, 20002, 568)
+# $arr2 = @("tree", "house", "rope")
 
 # -------------------------------------------------------------------------
 # "Append" element to existing array:
