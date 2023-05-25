@@ -11,10 +11,18 @@ $collection = @(9, 89, 7, 763, 34)
 #     Write-Output $e | Out-File -FilePath "res/output.txt"
 # }
 
+
 # --------------------------------------------------------------------------
 # To append to file, same as above but add '-Append' switch:
 # 
-foreach ($e in $collection)
-{
-    Write-Output $e | Out-File -Append -FilePath "res/output.txt"
-}
+# foreach ($e in $collection)
+# {
+#     Write-Output $e | Out-File -Append -FilePath "res/output.txt"
+# }
+
+
+# --------------------------------------------------------------------------
+# Writing the collection directly does NOT write all elements on single line.
+# i.e. foreach loop is not necessary as in above example.
+#
+Write-Output $collection | Out-File -Append -FilePath "res/output.txt"
