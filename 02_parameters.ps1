@@ -14,21 +14,21 @@
 # - can the param rely on a default value?
 # - what are appropriate initial values for the param?
 
-# -----------------------------------------------------------------------------
-# 1. Define parameters for the script with the 'Param' keyword.
-#
+
+# Define parameters for the script with the 'Param' keyword.
 # Param (
 #     $Path
 # )
+#
 # New-Item $Path # Creates new file at $Path
 # Write-Host "File $Path was created"
 
-# -----------------------------------------------------------------------------
-# 2. Check param value with if/else statement:
-#
+
+# Check param value with if/else statement:
 # Param (
 #     $Path
 # )
+#
 # if (-not $Path -eq '') {
 #     New-Item $Path # Creates new file at $Path
 #     Write-Host "File $Path was created"
@@ -37,32 +37,32 @@
 #     Write-Error "Path cannot be blank"
 # }
 
-# -----------------------------------------------------------------------------
-# 3. Make param mandatory with decorator
-#
+
+#  Make param mandatory with decorator
 # Param(
 #     [Parameter(Mandatory)]
 #     $Path
 # )
+#
 # New-Item $Path
 # Write-Host "File $Path was created"
 
-# -----------------------------------------------------------------------------
-# 4. Check param value with decorator and optional HelpMessage:
-#
+
+# Check param value with decorator and optional HelpMessage:
 # Param (
 #     [Parameter(Mandatory, HelpMessage = "Please provide a valid path")]
 #     $Path
 # )
+#
 # New-Item $Path
 # Write-Host "File $Path was created"
 
-# -----------------------------------------------------------------------------
-# 5. Require param to be specific type:
-#
+
+# Require param to be specific type:
 Param (
     [Parameter(Mandatory, HelpMessage = "Please provide a valid path")]
     [string]$Path
 )
+
 New-Item $Path
 Write-Host "File $Path was created"

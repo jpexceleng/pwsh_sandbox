@@ -7,12 +7,15 @@
 # usage for switch parameter:
 # e.g. ./Backup2.ps1 -PathIsWebApp -Path <path>
 
+# switch parameter type defined; value is initially $false; if switch parameter 
+# is included in the command, then switch parameter value becomes true.
 Param(
      [string]$Path = './app',
      [string]$DestinationPath = './',
      [switch]$PathIsWebApp # added a switch parameter (boolean type)
 )
 
+# read this as "if switch parameter is present in command?"
 if ($PathIsWebApp -eq $True)
 {
     # user has indicated the path is a webapp, but lets check the path contents for 

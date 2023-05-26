@@ -6,7 +6,7 @@
 $PI = 3.14
 
 # Use single quotes to print literal strings
-# Use backtick to escape interpolation.
+# Use backtick (`) to escape interpolation.
 Write-Output 'The value of `$PI is $PI' # prints: The value of $PI is $PI
 
 # Use double quotes to interpolate the variable.

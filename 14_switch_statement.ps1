@@ -1,5 +1,7 @@
 # below demonstrates a switch statement
 
+
+# prompt user for input
 $choice = Read-Host "Enter number between 1 and 3"
 
 # switch ($choice)
@@ -22,7 +24,7 @@ $choice = Read-Host "Enter number between 1 and 3"
 #     }
 # }
 
-# compact form:
+# same as above, but compact
 switch ($choice)
 {
     1 {Write-Host "One"}

@@ -14,21 +14,19 @@
 # $arr1 = @(34, 67, 187, 20002, 568)
 # $arr2 = @("tree", "house", "rope")
 
-# -------------------------------------------------------------------------
+
 # "Append" element to existing array:
 #
 # $arr1 += 65
 # Write-Host $arr1
 
 
-# -------------------------------------------------------------------------
 # Combine elements of two arrays containing different types in a new array
 #
 # $arr3 = $arr1 + $arr2
 # Write-Host $arr3
 
 
-# -------------------------------------------------------------------------
 # To enforce data type contained in array, use strongly typed array
 #
 [int[]]$typed_array = @(98, 78, 102, 33)

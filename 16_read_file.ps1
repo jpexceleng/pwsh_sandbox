@@ -3,37 +3,31 @@
 
 $filepath = "res/data.txt"
 
-# ------------------------------------------------------------------------
+
 # following reads each line of the file into an element of an array; 
 # $ip_addresses is now an array.
-#
 $ip_addresses = $(Get-Content -Path $filepath)
 foreach ($elem in $ip_addresses)
 {
     Write-Host $elem
 }
 
-# ------------------------------------------------------------------------
+
 # following writes number of lines in file to console.
-#
 $num_lines = $(Get-Content -Path $filepath).Length
 Write-Host "$filepath contains $num_lines lines."
 
 
-# ------------------------------------------------------------------------
 # following writes specific line from line to console.
 # - base index zero.
-#
 $elem = 4
 $val = $(Get-Content -Path $filepath)[$elem]
 Write-Host "Line $elem starting from zero of $filepath is $val."
 
 
-# ------------------------------------------------------------------------
-# Q: what happens when you try to read line greater than number of lines in file?
-# R: Surprising, attempting to read file line greater than the number of lines
-#    in the file throws no error and simply outputs a blank line.
-#
+# What happens when you try to read line greater than number of lines in file?
+# -> Attempting to read file line greater than the number of lines in the file 
+# throws no error and simply outputs a blank line.
 try {
     $oob = $(Get-Content -Path $filepath).Length
     $oob++
