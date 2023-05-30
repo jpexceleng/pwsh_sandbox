@@ -15,7 +15,7 @@ Write-Host $val.GetType()
 # $val = [double]$val
 # $val = [bool]$val
 # $val = [int]$val
-$val = [datetime]$val
+# $val = [datetime]$val
 # $val = [string]$val
 write-Host $val.GetType()
 
