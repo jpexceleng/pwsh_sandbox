@@ -1,9 +1,9 @@
 # demonstrate methods for working with arrays.
 
 # multiple ways to declare an array
-$arr = 90,102,24,36 # works most of the time
-#$arr = (90, 102, 24, 36)
-#$arr = @(90, 102, 24, 36) # @() syntax is preferred
+# $arr = 90,102,24,36 # works most of the time
+# $arr = (90, 102, 24, 36)
+$arr = @(90, 102, 24, 36) # @() syntax is preferred
 # $arr = @(
 #     90,
 #     102,
@@ -27,8 +27,10 @@ else {
 # $i = 3
 # Write-Host "Value at index $i starting from zero is $($arr[$i])"
 # Write-Host $arr[0, 2, 1] # reading multiple indices at once
-# Write-Host $arr[0..3]    # reading all indices
-# Write-Host $arr[3..0]    # reading all indices in reverse
+# Write-Host $arr[0..3]    # read elements at indices 1 through 3
+# Write-Host $arr[3..0]    # read elements at indices 1 through 3 in reverse
+# Write-Host $arr[0..$($arr.Count)] # read all elements
+# Write-Host $arr[$($arr.Count)..0] # read all elements in reverse
 
 # Test if array contains a specific value using '-contains' operator
 if ( $arr -contains "36" ) {
@@ -48,9 +50,11 @@ else {
 }
 
 
-# output array elements using wildcards or regex
+# output array elements using wildcards
 write-Host $($arr -like "9*")
 Write-Host $($arr -notlike "9*")
+
+# output array elements using regex
 Write-Host $($arr -match "90")
 Write-Host $($arr -notmatch "90")
 

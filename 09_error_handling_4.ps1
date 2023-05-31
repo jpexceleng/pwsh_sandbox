@@ -15,7 +15,7 @@ Param(
      [switch]$PathIsWebApp # added a switch parameter (boolean type)
 )
 
-# read this as "if switch parameter is present in command?"
+# read this as "if switch parameter is present in command"
 if ($PathIsWebApp -eq $True)
 {
     # user has indicated the path is a webapp, but lets check the path contents for 

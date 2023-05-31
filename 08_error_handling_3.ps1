@@ -10,8 +10,7 @@ $forbidden = "./forbidden/path1/", "./forbidden/path2/"
 
 try {
     foreach ($val in $forbidden) {
-        if ($path -eq $val)
-        {
+        if ($path -eq $val) {
             Throw "Path is forbidden!"
         }
     }

@@ -10,7 +10,7 @@ function multiply([float]$val1, [float]$val2)
 Write-Host $(multiply 3 5.6)
 
 
-# function declaration #2
+# function declaration #2; easier to read.
 function multiply2
 {
     Param(
