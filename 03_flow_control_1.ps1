@@ -15,5 +15,11 @@ if (-not (Test-Path $SrcPath))
 
 # perform compress files into zipped format (Compress-Archive has 2GB max limitation)
 $date = Get-Date -format "yyyy-MM-dd"
-Compress-Archive -Path $SrcPath -CompressionLevel 'Fastest' -DestinationPath "$($DestPath + 'backup-' + $date)"
+
+# use backtick (`) to wrap long commands onto newline
+Compress-Archive `
+    -Path $SrcPath `
+    -CompressionLevel 'Fastest' `
+    -DestinationPath "$($DestPath + 'backup-' + $date)"
+
 Write-Host "Created backup at $($DestPath + 'backup-' + $date + '.zip')"
