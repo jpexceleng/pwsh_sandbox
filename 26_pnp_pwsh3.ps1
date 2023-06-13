@@ -1,12 +1,12 @@
-# This script demonstrates updating a single page on sharepoint to display a
-# different file. 
+# This script demonstrates updating page properties for a single sharepoint 
+# site.
 
-$SiteUrl = "https://exceng.sharepoint.com/sites/KB"
+$Url = "https://exceng.sharepoint.com/sites/KB/"
 $TargetPageName = "TestPage"
 
 try {
     # connect to sharepoint
-    Connect-PnPOnline -Url $SiteUrl -Interactive
+    Connect-PnPOnline -Url $Url -Interactive
 
     # determine if page exists
     $TargetPage = Get-PnpPage -Identity $TargetPageName

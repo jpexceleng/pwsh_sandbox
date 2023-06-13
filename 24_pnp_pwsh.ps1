@@ -1,13 +1,13 @@
 # The following demonstrates how PnP.PowerShell module can be used to 
 # programmatically create a new SharePoint page with an embedded file.
 
-$SiteUrl="https://exceng.sharepoint.com/sites/KB/"
-$PageName="TestPage"
+$Url = "https://exceng.sharepoint.com/sites/KB/"
+$PageName = "TestPage"
 
 try {
 
     # connect to sharepoint site
-    Connect-PnPOnline -Url $SiteUrl -Interactive
+    Connect-PnPOnline -Url $Url -Interactive
    
     # create new test page
     Add-PnPPage `
