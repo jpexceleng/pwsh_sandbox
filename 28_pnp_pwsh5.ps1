@@ -56,14 +56,14 @@ try {
     # add new multichoice field
     Write-Host "Adding new MultiChoice field..."
     Add-PnpField -List $List `
-        -DisplayName "Test Field" `
-        -InternalName "TestField" `
+        -DisplayName "Test MultiChoice" `
+        -InternalName "TestMultiChoice" `
         -Type MultiChoice `
         -Group "Test Group" `
         -AddToDefaultView `
         -Choices "Choice A","Choice B","Choice C" `
         
-    $testfield = Get-PnPField -List $List -Identity "TestField"
+    $testfield = Get-PnPField -List $List -Identity "TestMultiChoice"
     Set-PnPField `
         -Identity $testfield `
         -Values @{`
