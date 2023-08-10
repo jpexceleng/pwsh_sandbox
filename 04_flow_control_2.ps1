@@ -1,4 +1,3 @@
-#
 # demonstrates basic control flow in powershell as well as goes over some
 # comparison operators.
 # 

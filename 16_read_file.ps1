@@ -1,5 +1,5 @@
 # demonstrates use of Get-Content cmdlet to read text data from file.
-# 
+
 
 $filepath = "res/data.txt"
 

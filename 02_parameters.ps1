@@ -1,5 +1,3 @@
-# create_file.ps1
-#
 # To make a script more flexible, you can write it such that you can 
 # pass parameters to it to affect the execution logic.
 #

@@ -1,4 +1,3 @@
-# PI.ps1
 # https://learn.microsoft.com/en-us/training/modules/script-with-powershell/2-introduction-scripting
 
 

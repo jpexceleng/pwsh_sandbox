@@ -12,14 +12,13 @@ try {
     $items = Get-PnPListItem -List $List 
     foreach ($item in $items) {
         [string]$line = $item.FieldValues 
-        
 
+        # TODO...
         # get title
         # get relative url
         # get filter criteria values
         # get check in comment
         # get approval status
-        
 
     }
 
